@@ -1,0 +1,40 @@
+{
+  "name": "intersections",
+  "version": "0.0.1",
+  "description": "проект для поиска вк людей по схожим интересам.",
+  "main": "server/index.js",
+  "dependencies": {
+    "aphrodite": "^1.2.1",
+    "if-env": "^1.0.0",
+    "lodash": "^4.17.4",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-redux": "^5.0.5",
+    "redux-thunk": "^2.2.0",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "start": "if-env NODE_ENV=prod && npm run start:prod || npm run start:dev",
+    "start:dev": "webpack-dev-server --hot --inline --open",
+    "start:prod": "echo start prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LitvinenkoEvgeny/intersections.git"
+  },
+  "keywords": [
+    "vk",
+    "api",
+    "intersections"
+  ],
+  "author": "Litvinenko Evgeny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LitvinenkoEvgeny/intersections/issues"
+  },
+  "homepage": "https://github.com/LitvinenkoEvgeny/intersections#readme"
+}
