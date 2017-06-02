@@ -1,8 +1,8 @@
-const path = require('path');
-const webpack = require('webpack');
-const _ = require('lodash');
+const path = require('path'); // eslint-disable-line no-undef
+const webpack = require('webpack'); // eslint-disable-line no-undef
+const _ = require('lodash'); // eslint-disable-line no-undef
 
-const baseConfig = require('./webpack.base.js');
+const baseConfig = require('./webpack.base.js'); // eslint-disable-line no-undef
 
 baseConfig.module.rules.push({
   test: /\.js$/,
@@ -36,10 +36,9 @@ let dev = {
     },
     watchContentBase: true,
     watchOptions: {
-      aggregateTimeout: 300,
-      poll: 1000,
+      poll: true,
     },
-    contentBase: path.join(__dirname, '../client'),
+    contentBase: path.join(__dirname, '../client'), // eslint-disable-line no-undef
     compress: true, // enable gzip compression
     historyApiFallback: true,
     hot: true,
@@ -50,4 +49,4 @@ let dev = {
 
 dev = _.merge(baseConfig, dev);
 
-module.exports = dev;
+module.exports = dev; // eslint-disable-line no-undef
