@@ -14,6 +14,6 @@ const paths = {
 const baseConfig = require(paths.base);
 const enhancedConfig = require(paths[nowEnv]);
 
-const config = _.merge(baseConfig, enhancedConfig);
+const config = _.assign(baseConfig, enhancedConfig);
 
 module.exports = config;

@@ -1,26 +1,27 @@
 const path = require('path');
 const webpack = require('webpack');
+const _ = require('lodash');
 
 const baseConfig = require('./webpack.base.js');
-baseConfig.module.rules.shift({
-      {
-        test: /\.js$/,
-        exclude: /(node_modules)/,
-        use: {
-          loader: 'eslint-loader',
-        }
-      }
-})
-console.log(baseConfig);
 
-module.exports = {
+baseConfig.module.rules.push({
+  test: /\.js$/,
+  exclude: /(node_modules)/,
+  use: {
+    loader: 'eslint-loader',
+    options: {
+      parser: 'babel-eslint'
+    }
+  }
+})
+
+let dev = {
   output: {
     pathinfo: true,
     filename: 'bundle.js'
   },
   module: {
-    rules: [
-    ]
+    rules: []
   },
 
   performance: {
@@ -44,7 +45,9 @@ module.exports = {
     hot: true,
     inline: true
   },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ]
+  plugins: [new webpack.HotModuleReplacementPlugin()]
 }
+
+dev = _.merge(baseConfig, dev);
+
+module.exports = dev;
