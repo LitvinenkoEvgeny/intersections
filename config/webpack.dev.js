@@ -1,10 +1,26 @@
 const path = require('path');
 const webpack = require('webpack');
 
+const baseConfig = require('./webpack.base.js');
+baseConfig.module.rules.shift({
+      {
+        test: /\.js$/,
+        exclude: /(node_modules)/,
+        use: {
+          loader: 'eslint-loader',
+        }
+      }
+})
+console.log(baseConfig);
+
 module.exports = {
   output: {
     pathinfo: true,
     filename: 'bundle.js'
+  },
+  module: {
+    rules: [
+    ]
   },
 
   performance: {
