@@ -10,43 +10,43 @@ baseConfig.module.rules.push({
   use: {
     loader: 'eslint-loader',
     options: {
-      parser: 'babel-eslint'
-    }
-  }
-})
+      parser: 'babel-eslint',
+    },
+  },
+});
 
 let dev = {
   output: {
     pathinfo: true,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
-    rules: []
+    rules: [],
   },
 
   performance: {
-    hints: 'warning'
+    hints: 'warning',
   },
 
-  devtool: "source-map",
+  devtool: 'source-map',
 
   devServer: {
     proxy: {
-      '/api': 'http://localhost:3000'
+      '/api': 'http://localhost:3000',
     },
     watchContentBase: true,
     watchOptions: {
       aggregateTimeout: 300,
-      poll: 1000
+      poll: 1000,
     },
     contentBase: path.join(__dirname, '../client'),
     compress: true, // enable gzip compression
     historyApiFallback: true,
     hot: true,
-    inline: true
+    inline: true,
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
-}
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+};
 
 dev = _.merge(baseConfig, dev);
 
