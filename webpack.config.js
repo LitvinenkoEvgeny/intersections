@@ -5,6 +5,7 @@ const _ = require('lodash');
 const isProduction = process.env.NODE_ENV === 'prod';
 const nowEnv = isProduction? 'prod' : 'dev';
 
+
 const paths = {
   base: path.join(__dirname, 'config/webpack.base.js'),
   dev: path.join(__dirname, 'config/webpack.dev.js'),
